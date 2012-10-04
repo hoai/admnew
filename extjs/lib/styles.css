@@ -1,0 +1,162 @@
+.msg .x-box-mc {
+    font-size:14px;
+}
+#msg-div {
+    position:absolute;
+    left:35%;
+    top:10px;
+    width:300px;
+    z-index:20000;
+}
+#msg-div .msg {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    background: #F6F6F6;
+    border: 2px solid #ccc;
+    margin-top: 2px;
+    padding: 10px 15px;
+    color: #555;
+}
+#msg-div .msg h3 {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#msg-div .msg p {
+    margin: 0;
+}
+/* Icons */
+.icon-add { background:url(/extjs/lib/img/silk-icons/add.png) no-repeat !important; }
+.icon-group-bell { background:url(/extjs/lib/img/silk-icons/folder_bell.png) no-repeat !important; }
+.icon-group-add { background:url(/extjs/lib/img/silk-icons/folder_add.png) no-repeat !important; }
+.icon-group-drop { background:url(/extjs/lib/img/silk-icons/folder_delete.png) no-repeat !important; }
+.icon-group-edit { background:url(/extjs/lib/img/silk-icons/folder_edit.png) no-repeat !important; }
+.icon-auth { background:url(/extjs/lib/img/silk-icons/key.png) no-repeat !important; }
+.icon-box { background:url(/extjs/lib/img/silk-icons/package.png) no-repeat !important; }
+.icon-box-create { background:url(/extjs/lib/img/silk-icons/package_add.png) no-repeat !important; }
+.icon-cancel { background:url(/extjs/lib/img/silk-icons/cancel.png) no-repeat !important; }
+.icon-cancel-inactive { background:url(/extjs/lib/img/silk-icons/cancel_grey.png) no-repeat !important; }
+.icon-catalog-title { background:url(/extjs/lib/img/icon-button-round-blue.png) no-repeat !important; }
+.icon-check { background:url(/extjs/lib/img/silk-icons/help.png) no-repeat !important; }
+.icon-collapse { background:url(/extjs/lib/img/silk-icons/arrow_in.png) no-repeat !important; }
+.icon-config { background:url(/extjs/lib/img/silk-icons/cog.png) no-repeat !important; }
+.icon-dashboard-catalog { background:url(/extjs/lib/img/icon-dashboard-catalog.png) no-repeat !important; }
+.icon-delete { background:url(/extjs/lib/img/silk-icons/delete.png) no-repeat !important; }
+.icon-divide { background:url(/extjs/lib/img/silk-icons/arrow_divide.png) no-repeat !important; }
+.icon-down { background:url(/extjs/lib/img/silk-icons/arrow_down.png) no-repeat !important; }
+.icon-edit { background:url(/extjs/lib/img/silk-icons/pencil.png) no-repeat !important; }
+.icon-expand { background:url(/extjs/lib/img/silk-icons/arrow_out.png) no-repeat !important; }
+.icon-find { background:url(/extjs/lib/img/silk-icons/find.png) no-repeat !important; }
+.icon-freeze { background:url(/extjs/lib/img/icon-snow-flake.png) no-repeat !important; }
+.icon-node { background:url(/extjs/lib/img/silk-icons/folder.png) no-repeat !important; }
+.icon-node-create { background:url(/extjs/lib/img/silk-icons/folder_add.png) no-repeat !important; }
+.icon-node-delete { background:url(/extjs/lib/img/silk-icons/folder_delete.png) no-repeat !important; }
+.icon-node-open { background:url(/extjs/lib/img/icon-node-open.gif) no-repeat !important; }
+.icon-node-rename { background:url(/extjs/lib/img/icon-node-rename.png) no-repeat !important; }
+.icon-open { background:url(/extjs/lib/img/silk-icons/folder.png) no-repeat !important; }
+.icon-probably { background:url(/extjs/lib/img/silk-icons/asterisk_yellow.png) no-repeat !important; }
+.icon-probably-inactive { background:url(/extjs/lib/img/silk-icons/asterisk_grey.png) no-repeat !important; }
+.icon-recycle-bin { background:url(/extjs/lib/img/icon-empty-recycle-bin.png) no-repeat !important; }
+.icon-recycle-bin-empty { background:url(/extjs/lib/img/icon-empty-recycle-bin.png) no-repeat !important; }
+.icon-refresh { background:url(/extjs/lib/img/silk-icons/arrow_refresh.png) no-repeat !important; }
+.icon-refresh-local { background:url(/extjs/lib/img/silk-icons/page_refresh.png) no-repeat !important; }
+.icon-run { background:url(/extjs/lib/img/silk-icons/cog_go.png) no-repeat !important; }
+.icon-save { background:url(/extjs/lib/img/silk-icons/disk.png) no-repeat !important; }
+.icon-submit { background:url(/extjs/lib/img/silk-icons/tick.png) no-repeat !important; }
+.icon-submit-inactive { background:url(/extjs/lib/img/silk-icons/tick_grey.png) no-repeat !important; }
+.icon-supplier { background:url(/extjs/lib/img/silk-icons/link.png) no-repeat !important; }
+
+.icon-tab-folder  { background:url(/extjs/lib/extjs/extjs-4.1.1/core/v3.3.0/resources/images/default/tree/folder.gif) no-repeat !important; }
+
+.icon-undo { background:url(/extjs/lib/img/silk-icons/arrow_undo.png) no-repeat !important; }
+.icon-unsaved { background:url(/extjs/lib/img/silk-icons/disk_red.png) no-repeat !important; }
+.icon-view { background:url(/extjs/lib/img/silk-icons/ruby_gear.png) no-repeat !important; }
+.icon-save-filter { background:url(/extjs/lib/img/silk-icons/thumb_up.png) no-repeat !important; }
+.icon-prev { background:url(/extjs/lib/img/silk-icons/arrow_left.png) no-repeat !important; }
+.icon-next { background:url(/extjs/lib/img/silk-icons/arrow_right.png) no-repeat !important; }
+
+input.icon-find { background-position:2px 2px !important; padding-left:20px; }
+
+
+.cb-color { width: 21px !important; }
+
+.msg .x-box-mc { font-size:14px; }
+
+.dashboard {  }
+body { background-color:#fffff; }
+.appLogo { display:block; width:280px; height:227px; position:absolute; z-index:-10000; bottom:5px; left:10px; background:transparent url('/extjs/lib/img/versions/catbus.png') no-repeat; }
+.appName { font-size:30px; color:#c68749; font-family:georgia; display:block; position:absolute; z-index:-10000; top:10px; right:20px; }
+.appReleaseName { display:block; font-size:30px; }
+#ajaxIndicator { display:none; position:absolute; z-index:65000; top:0; right:25px; }
+
+.row-inactive { color:red; }
+.row-active { color:green; }
+
+.row-freezed { background: #cce; }
+.row-disable { color: #aaa; }
+
+.tree-node-inactive a span { color: #999 !important; }
+.tree-node-good a span { color: #060 !important; }
+.tree-node-bad a span { color: #600 !important; }
+
+.ux-tbar-header-text {
+	font-weight: bold !important;
+	color: #15428B;
+	position: relative;
+	top: -2px;
+}
+
+.ux-row-action {
+	display: none;
+}
+.x-grid3-row-over .ux-row-action,
+.x-grid3-row-selected .ux-row-action {
+	display: block;
+}
+.field_pn1{
+color:red !important;
+text-decoration: line-through;
+
+}
+
+.field_pn2{
+color:green !important;
+
+}
+.dnt_form_slider_title {
+    background-color: transparent;
+    display: inline;
+}
+.dnt_form_slider_value {
+    position: absolute;
+    right: 26px;
+    display: inline;
+}
+.dnt_form_slider_value_input {
+    display: inline !important;
+    min-height: 20px !important;
+    padding: 0px !important;
+    text-align: right;
+    width: 60px !important;
+}
+
+/* Enable text selections in grid cell */ 
+.x-selectable, .x-selectable * {
+   -moz-user-select: text!important;
+   -khtml-user-select: text!important;
+}
+
+.x-grid3-td-noactived {
+
+}
+
+.x-grid3-td-actived {
+    color: blue; 
+}
+
+.x-grid3-hd-actived {
+    background: transparent url(/extjs/lib/img/silk-icons/accept.png)
+        no-repeat 23px 3px ! important;
+        padding-left:2px;
+        padding-right:5px;
+}

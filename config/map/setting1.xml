@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<name>
+		section_unique
+	</name>
+   <settings>
+		<variable>url</variable>
+		<name>section_unique</name>
+	</settings>   
+   <settings>
+		<variable>desc</variable>
+		<name>Уникальные товары</name>
+	</settings>
+	<settings>
+		<variable>name_app</variable>
+		<name>Ext.ux.section_unique</name>
+	</settings>
+</module>

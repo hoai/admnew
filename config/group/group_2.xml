@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<group name = "Настройки системы">
+   <name>Настройки системы</name>
+   <module>    
+      <variable>section_group_dict</variable>
+      <name>Группы</name>
+   </module>
+</group>

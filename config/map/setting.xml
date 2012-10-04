@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<name>
+		section_category
+	</name>
+   <settings>
+		<variable>url</variable>
+		<name>section_category</name>
+	</settings>   
+   <settings>
+		<variable>desc</variable>
+		<name>Разделы каталога</name>
+	</settings>
+	<settings>
+		<variable>name_app</variable>
+		<name>Ext.ux.section_category</name>
+	</settings>
+</module>
