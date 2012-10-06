@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+	<name>
+		section_group_dict
+	</name>
+   <settings>
+		<variable>url</variable>
+		<name>section_group_dict</name>
+	</settings>   
+   <settings>
+		<variable>desc</variable>
+		<name>Группы</name>
+	</settings>
+	<settings>
+		<variable>name_app</variable>
+		<name>Ext.ux.section_group_dict</name>
+	</settings>
+</module>

@@ -98,6 +98,7 @@ echo "
        listeners:{
           itemclick: function( tree, record, item, index, e, eOpts ){
              console.log(record.get('id'));
+             if(record.get('id') != undefined)
              window.location.href = 'index.php?m='+record.get('id');
              
           }
@@ -111,18 +112,7 @@ echo "
 
 </head>
 <body>
-<div id="menu" style = "width:200px;float:left;font-size: 16px;">
-   <?php
-      /*
-      foreach($modules as $module){
-         echo "<div style='padding: 5px;'><a href = '?m=".trim($module->name)."'>".$module->settings['desc']->name. "</a></div>";
-      }    */
-
-   ?>
-   
-    </div>
-
+<div id="menu" style = "width:200px;float:left;"></div>
 <div id="app" style = "margin-left:200px;margin-top:0px;"></div>
-<div></div>
 </body>
 </html>
