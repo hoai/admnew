@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module>
 	<name>
-		section_group_dict
+		login
 	</name>
    <settings>
 		<variable>url</variable>
-		<name>section_group_dict</name>
+		<name>login</name>
 	</settings>   
    <settings>
 		<variable>desc</variable>
-		<name>Группы</name>
+		<name>Авторизация</name>
 	</settings>
 	<settings>
 		<variable>name_app</variable>
-		<name>Ext.ux.section_group_dict</name>
+		<name>Ext.ux.login</name>
 	</settings>
 </module>

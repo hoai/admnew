@@ -9,4 +9,8 @@
       <variable>section_unique</variable>
       <name>Уникальные товары</name>
    </module>
+   <module> 
+      <variable>login</variable>
+      <name>Авторизация</name>
+   </module>
 </group>
