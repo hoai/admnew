@@ -1,13 +1,13 @@
-Ext.define('adm.view.dm_list.dm_west' ,{
+Ext.define('adm.view.category.cat_west' ,{
     extend: 'Ext.tree.Panel',
-    alias : 'widget.dmwest',
+    alias : 'widget.catwest',
     title : 'Каталог товаров',
     region: 'west',
     //store: 'dmcenter',
     rootVisible: false,
     width: 300,
     collapsible:true,
-   viewConfig: {
+    viewConfig: {
             plugins: {
                 ptype: 'treeviewdragdrop'
             },

@@ -1,17 +1,17 @@
-Ext.define('adm.controller.dm_list', {
+Ext.define('adm.controller.cat_list', {
     extend: 'Ext.app.Controller',
     views: [
-         'dm_list.dm_center','dm_list.dm_list','dm_list.dm_west'
+         'category.cat_center','category.cat_list','category.cat_west'
     ],
     stores: [
         //'dmcenter','dmeast'
     ],
     refs: [
       {
-         ref: 'dwe', selector: 'dmcenter'
+         ref: 'dwe', selector: 'catcenter'
       },
       {
-         ref: 'tree', selector: 'dmwest'
+         ref: 'tree', selector: 'catwest'
       },
    ],
     //models: ['dmwest','dmeast'],  
@@ -20,7 +20,7 @@ Ext.define('adm.controller.dm_list', {
         
        this.control({
 
-            'dmwest dataview': {
+            'catwest dataview': {
                itemclick: me.showAlias
             },
            

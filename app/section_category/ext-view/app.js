@@ -8,7 +8,7 @@ Ext.application({
    name: 'adm',
    appFolder: path_app,
    controllers: [
-      'dm_list'
+      'cat_list'
    ],
     autoCreateViewport: false,
    launch: function() {
@@ -23,7 +23,7 @@ Ext.application({
          items:[
          {
             title:   lang.dm_list ,            
-            xtype:   'dmlist'
+            xtype:   'catlist'
          }
          ]
       });

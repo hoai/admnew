@@ -21,9 +21,9 @@ Ext.create('Ext.data.Store', {
     }
 });
 
-Ext.define('adm.view.dm_list.dm_center' ,{
+Ext.define('adm.view.category.cat_center' ,{
     extend: 'Ext.tab.Panel',
-    alias : 'widget.dmcenter',
+    alias : 'widget.catcenter',
     region: 'center',
     items: [
        {
