@@ -224,15 +224,14 @@ Ext.define('adm.view.dm_list.dm_center' ,{
            items:[
                {
                   region: 'west',
-                  layout: 'border',
+                  layout: 'anchor',
                   border: false,
                   width: 450,
                   items:[
                      {
-                        title: 'Параметры каталога',
-                        region: 'north',
-                        height: 300,
+                        title: 'Параметры каталога',   
                         xtype: 'grid',
+                        anchor: '100% 50%',
                         //store: Ext.data.StoreManager.lookup('simpsonsStore'),
                         columns: [
                              { text: 'Характеристика',  dataIndex: 'name', flex: 1 },
@@ -244,7 +243,7 @@ Ext.define('adm.view.dm_list.dm_center' ,{
                         
                      },{
                         title: 'Значение',
-                        region: 'center',
+                        anchor: '100% 50%',
                         border: false,
                         xtype: 'grid',
                         //store: Ext.data.StoreManager.lookup('simpsonsStore'),
@@ -261,14 +260,13 @@ Ext.define('adm.view.dm_list.dm_center' ,{
                },
                {
                   region: 'center',
-                  layout: 'border',
+                  layout: 'anchor',
                   border: false,
                   //width: 200,
                   items:[
                      {
                         title: 'Синонимы',
-                        region: 'north',
-                        height: 300,
+                        anchor: '100% 50%',                       
                         border: false,
                         xtype: 'grid',
                         //store: Ext.data.StoreManager.lookup('simpsonsStore'),
@@ -280,7 +278,7 @@ Ext.define('adm.view.dm_list.dm_center' ,{
                          ],
                      },{
                         title: 'Синонимы значение',
-                        region: 'center',
+                        anchor: '100% 50%',
                         xtype: 'grid',
                         //store: Ext.data.StoreManager.lookup('simpsonsStore'),
                         columns: [
