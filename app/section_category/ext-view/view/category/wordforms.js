@@ -14,6 +14,7 @@ Ext.define('adm.view.category.wordforms' ,
             border:        false,
             bodyStyle:     'padding:10px',
             defaultType:   'textfield',
+            //url: 
             items:         [
             {
                name:          'node_id',

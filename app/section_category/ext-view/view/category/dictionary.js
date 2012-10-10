@@ -1,8 +1,8 @@
 Ext.define('adm.view.category.dictionary' ,
 {
-      extend: 'Ext.panel.Panel',
-      alias : 'widget.dictionary',
-      title: 'Словари',
+     extend: 'Ext.panel.Panel',
+     alias : 'widget.dictionary',
+     title: 'Словари',
      layout : 'border',
      items:[
       {
@@ -11,31 +11,11 @@ Ext.define('adm.view.category.dictionary' ,
          border: false,
          width: 450,
          items:[
-            {
-               title: 'Параметры каталога',   
-               xtype: 'grid',
-               anchor: '100% 50%',
-               //store: Ext.data.StoreManager.lookup('simpsonsStore'),
-               columns: [
-                    { text: 'Характеристика',  dataIndex: 'name', flex: 1 },
-                    { text: 'Подключить', dataIndex: 'email'},
-                    { text: 'Наследовать', dataIndex: 'email'},
-                    
-                ],
-                           
+            {  
+               xtype: 'settings_dict',          
                
             },{
-               title: 'Значение',
-               anchor: '100% 50%',
-               border: false,
-               xtype: 'grid',
-               //store: Ext.data.StoreManager.lookup('simpsonsStore'),
-               columns: [
-                    { text: 'Характеристика',  dataIndex: 'name', flex: 1 },
-                    { text: 'Подключить', dataIndex: 'email'},
-                    { text: 'Наследовать', dataIndex: 'email'},
-                    
-                ],
+                xtype: 'values_dict', 
             }
          
          ]
@@ -48,28 +28,9 @@ Ext.define('adm.view.category.dictionary' ,
          //width: 200,
          items:[
             {
-               title: 'Синонимы',
-               anchor: '100% 50%',                       
-               border: false,
-               xtype: 'grid',
-               //store: Ext.data.StoreManager.lookup('simpsonsStore'),
-               columns: [
-                    { text: 'Характеристика',  dataIndex: 'name', flex: 1 },
-                    { text: 'Подключить', dataIndex: 'email'},
-                    { text: 'Наследовать', dataIndex: 'email'},
-                    
-                ],
+               xtype:'alias'
             },{
-               title: 'Синонимы значение',
-               anchor: '100% 50%',
-               xtype: 'grid',
-               //store: Ext.data.StoreManager.lookup('simpsonsStore'),
-               columns: [
-                    { text: 'Характеристика',  dataIndex: 'name', flex: 1 },
-                    { text: 'Подключить', dataIndex: 'email'},
-                    { text: 'Наследовать', dataIndex: 'email'},
-                    
-                ],
+               xtype:'values_alias',
                
             }
          
@@ -77,20 +38,7 @@ Ext.define('adm.view.category.dictionary' ,
          
       },
       {
-         title: 'Неразобранные товары',
-         region: 'east',
-         //border: false,
-         width: 200,
-         collapsible: true,
-         collapsed: true,
-         xtype: 'grid',
-               //store: Ext.data.StoreManager.lookup('simpsonsStore'),
-               columns: [
-                    { text: 'Характеристика',  dataIndex: 'name', flex: 1 },
-                    { text: 'Подключить', dataIndex: 'email'},
-                    { text: 'Наследовать', dataIndex: 'email'},
-                    
-                ],
+          xtype:'wares',
       }
   
   ]               
