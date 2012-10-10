@@ -5,8 +5,6 @@ Ext.define('adm.view.category.cat_list' ,{
     items:[
          {xtype: 'catwest'},         
          {xtype: 'catcenter'},
-         
-
          ],
 
 

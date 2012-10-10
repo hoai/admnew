@@ -1,7 +1,8 @@
 Ext.define('adm.controller.cat_list', {
     extend: 'Ext.app.Controller',
     views: [
-         'category.cat_center','category.cat_list','category.cat_west'
+         'category.cat_center','category.cat_list','category.cat_west',
+         'category.wordforms','category.externalDict','category.dictionary',
     ],
     stores: [
         //'dmcenter','dmeast'
