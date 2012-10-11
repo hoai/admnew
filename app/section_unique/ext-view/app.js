@@ -83,7 +83,11 @@ Ext.application({
                 text     : 'Company',
                 flex     : 1,
                 sortable : false, 
-                dataIndex: 'company'
+                dataIndex: 'company',
+                editor: {
+                  // defaults to textfield if no xtype is supplied
+                  allowBlank: false
+               }
             },
             {
                 text     : 'Price', 
@@ -138,13 +142,16 @@ Ext.application({
         * @private
         * Case sensitive mode.
         */
-       caseSensitive: false,
+        caseSensitive: false,
        /**
         * @private
         * The generated regular expression used for searching.
         */
-       searchRegExp: null,
+        searchRegExp: null,
+        plugins : [],
         initComponent: function() {
+        // constructor: function(config) {
+            //console.log(config);
             var me = this;
             var dockedItems = [{
                                  xtype: 'toolbar',
@@ -164,7 +171,7 @@ Ext.application({
                                  xtype: 'toolbar',
                                  items: [{
                           
-                                     tooltip:'Add a new row',
+                                     tooltip:'Add record',
                                      iconCls: 'icon-add',
                                      text: 'Add',
                                       handler: this.addRow
@@ -185,7 +192,7 @@ Ext.application({
                                           specialkey: {
                                               fn: me.search,
                                               scope: this,
-                                              buffer: 100
+                                              //buffer: 100
                                           }
                                       }
                                     
@@ -203,17 +210,28 @@ Ext.application({
              });
             me.selModel    = selModel;            
             var rowEditing = Ext.create('Ext.grid.plugin.RowEditing', {
-               clicksToEdit: 2,
-               //autoCancel: false,
+               clicksToEdit: 2,             
                pluginId: 'rowEditing'
             });
             
-            me.plugins     = [rowEditing];
-            me.callParent(arguments);
+            me.plugins     = [rowEditing];         
+            //me.superclass.constructor.apply(this,arguments);
+            this.callParent(arguments);
          },
          addRow: function(){
-            var me = this;
+            var me = this.up('toolbar').up('gridpanel');
             console.log(me);
+            var rowEditing =  me.getPlugin('rowEditing');               
+            rowEditing.cancelEdit();
+            
+            var store = me.getStore();              
+              console.log(store);  
+            var model = store.model;
+           
+            var record = Ext.create(model);
+            store.insert(0, record);
+                
+            rowEditing.startEdit(0, 0);
          },
          removeRow: function (){
             var me = this;
