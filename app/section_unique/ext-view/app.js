@@ -114,49 +114,16 @@ Ext.application({
             }
         ];
     Ext.define('Ext.ux.gridEditAdm', {
-        store: store,
+        
         extend: 'Ext.grid.Panel',
-        requires: [
+        /*requires: [
 
-         ],
+         ],*/
         alias : 'widget.gridEditAdm',
         id:    'button-grid',
-        columns:  columns,
+        
         columnLines: true,  
         title    : 'grid editor',   
-        // inline buttons
-        dockedItems: [{
-            xtype: 'toolbar',
-            dock: 'bottom',
-            ui: 'footer',
-            layout: {
-                pack: 'center'
-            },
-            items: [{
-                minWidth: 80,
-                text: 'Save'
-            },{
-                minWidth: 80,
-                text: 'Cancel'
-            }]
-        }, {
-            xtype: 'toolbar',
-            items: [{
-     
-                tooltip:'Add a new row',
-                iconCls: 'icon-add',
-                text: 'Add',
-                handler: this.add
-            },'-',{
-                itemId: 'remove',
-                tooltip:'Remove the selected item',                
-                iconCls: 'icon-delete',
-                text: 'Delete',
-                disabled: true,
-                handler: this.delete,
-            }]
-        }],
-
         frame: true,
         width: 600,
         height: 300,
@@ -167,8 +134,66 @@ Ext.application({
         
         group: true,
         searchValue: null,
+        /**
+        * @private
+        * Case sensitive mode.
+        */
+       caseSensitive: false,
+       /**
+        * @private
+        * The generated regular expression used for searching.
+        */
+       searchRegExp: null,
         initComponent: function() {
             var me = this;
+            var dockedItems = [{
+                                 xtype: 'toolbar',
+                                 dock: 'bottom',
+                                 ui: 'footer',
+                                 layout: {
+                                     pack: 'center'
+                                 },
+                                 items: [{
+                                     minWidth: 80,
+                                     text: 'Save'
+                                 },{
+                                     minWidth: 80,
+                                     text: 'Cancel'
+                                 }]
+                             }, {
+                                 xtype: 'toolbar',
+                                 items: [{
+                          
+                                     tooltip:'Add a new row',
+                                     iconCls: 'icon-add',
+                                     text: 'Add',
+                                      handler: this.addRow
+                                 },'-',{
+                                     itemId: 'remove',
+                                     tooltip:'Remove the selected item',                
+                                     iconCls: 'icon-delete',
+                                     text: 'Delete',
+                                     disabled: true,
+                                     handler: this.removeRow,
+                                 },'-',
+                                    'Search',{
+                                      xtype: 'textfield',
+                                      name: 'searchField',
+                                      hideLabel: true,
+                                      width: 200,
+                                      listeners: {
+                                          specialkey: {
+                                              fn: me.search,
+                                              scope: this,
+                                              buffer: 100
+                                          }
+                                      }
+                                    
+                                    
+                                 }
+                                 ]
+                             }] ; 
+            me.dockedItems = dockedItems;
             var selModel = Ext.create('Ext.selection.CheckboxModel', {
                  listeners: {
                      selectionchange: function(sm, selections) {
@@ -185,11 +210,38 @@ Ext.application({
             
             me.plugins     = [rowEditing];
             me.callParent(arguments);
-         }
+         },
+         addRow: function(){
+            var me = this;
+            console.log(me);
+         },
+         removeRow: function (){
+            var me = this;
+            
+         },
+         search: function (field, e){
+            if (e.getKey() == e.ENTER) {
+               var me = this;
+               me.searchValue  = me.down('textfield[name=searchField]').getValue();
+               
+               var store = me.getStore();
+               if (me.searchValue.length > 0 ) {
+                 // me.searchRegExp = new RegExp(me.searchValue, 'g' + (me.caseSensitive ? '' : 'i'));
+                  
+                  store.filter([
+                      {filterFn: function(item) { return item.get("company").indexOf(me.searchValue) > -1; }}
+                  ]);
+               }else{
+                  store.clearFilter(false);
+               }
+            
+            }
+         },
     });
      var gird =  Ext.create('Ext.ux.gridEditAdm',{
          title: 'asdasd',
-         
+         store: store,
+         columns:  columns,
       });
       Ext.create('Ext.panel.Panel', {            
          layout: 'fit',
