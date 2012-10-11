@@ -146,14 +146,14 @@ Ext.application({
                 tooltip:'Add a new row',
                 iconCls: 'icon-add',
                 text: 'Add',
-                handler: me.add
+                handler: this.add
             },'-',{
                 itemId: 'remove',
                 tooltip:'Remove the selected item',                
                 iconCls: 'icon-delete',
                 text: 'Delete',
                 disabled: true,
-                handler: me.delete
+                handler: this.delete,
             }]
         }],
 
