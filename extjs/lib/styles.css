@@ -27,8 +27,8 @@
 }
 /* Icons */
 .icon-add { background:url(/extjs/lib/img/silk-icons/add.png) no-repeat !important; }
-.icon-group-bell { background:url(/extjs/lib/img/silk-icons/folder_bell.png) no-repeat !important; }
-.icon-group-add { background:url(/extjs/lib/img/silk-icons/folder_add.png) no-repeat !important; }
+.icon-group-bell { background:url(extjs/lib/img/silk-icons/folder_bell.png) no-repeat !important; }
+.icon-group-add { background:url(extjs/lib/img/silk-icons/folder_add.png) no-repeat !important; }
 .icon-group-drop { background:url(/extjs/lib/img/silk-icons/folder_delete.png) no-repeat !important; }
 .icon-group-edit { background:url(/extjs/lib/img/silk-icons/folder_edit.png) no-repeat !important; }
 .icon-auth { background:url(/extjs/lib/img/silk-icons/key.png) no-repeat !important; }

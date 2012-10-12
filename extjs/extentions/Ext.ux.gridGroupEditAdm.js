@@ -19,6 +19,10 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
         
         group: true,
         searchValue: null,
+        /**
+         * @public
+         * Название field поиска
+         */
         searchField: null,
         /**
         * @private
@@ -30,12 +34,12 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
         * The generated regular expression used for searching.
         */
         searchRegExp: null,
-        plugins : [],
+        plugins : [],        
         initComponent: function() {
         // constructor: function(config) {
             //console.log(config);
             var me = this;
-            var dockedItems = [/*{
+            var bottom = {
                                  xtype: 'toolbar',
                                  dock: 'bottom',
                                  ui: 'footer',
@@ -49,7 +53,8 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
                                      minWidth: 80,
                                      text: 'Cancel'
                                  }]
-                             },*/ {
+                             };
+            var dockedItems = [/** bottom,*/ {
                                  xtype: 'toolbar',
                                  items: [{
                           
@@ -97,8 +102,14 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
             });
             
             me.plugins     = [rowEditing];         
-            //me.superclass.constructor.apply(this,arguments);
+            
+            
+            var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{
+                 groupHeaderTpl: '{name} ({rows.length})'
+            });
+            me.features =  [groupingFeature];
             this.callParent(arguments);
+            //me.superclass.constructor.apply(this,arguments);
          },
          addRow: function(){
             var me = this.up('toolbar').up('gridpanel');      

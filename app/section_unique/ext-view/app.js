@@ -12,115 +12,253 @@ Ext.application({
    ],
     autoCreateViewport: false,
    launch: function() {
-       /**
-     * Custom function used for column renderer
-     * @param {Object} val
-     */
-    function change(val){
-        if(val > 0){
-            return '<span style="color:green;">' + val + '</span>';
-        }else if(val < 0){
-            return '<span style="color:red;">' + val + '</span>';
-        }
-        return val;
-    }
-
-    /**
-     * Custom function used for column renderer
-     * @param {Object} val
-     */
-    function pctChange(val){
-        if(val > 0){
-            return '<span style="color:green;">' + val + '%</span>';
-        }else if(val < 0){
-            return '<span style="color:red;">' + val + '%</span>';
-        }
-        return val;
-    } 
-    var myData = [
-        ['3m Co',                               71.72, 0.02,  0.03,  '9/1 12:00am'],
-        ['Alcoa Inc',                           29.01, 0.42,  1.47,  '9/1 12:00am'],
-        ['Altria Group Inc',                    83.81, 0.28,  0.34,  '9/1 12:00am'],
-        ['American Express Company',            52.55, 0.01,  0.02,  '9/1 12:00am'],
-        ['American International Group, Inc.',  64.13, 0.31,  0.49,  '9/1 12:00am'],
-        ['AT&T Inc.',                           31.61, -0.48, -1.54, '9/1 12:00am'],
-        ['Boeing Co.',                          75.43, 0.53,  0.71,  '9/1 12:00am'],
-        ['Caterpillar Inc.',                    67.27, 0.92,  1.39,  '9/1 12:00am'],
-        ['Citigroup, Inc.',                     49.37, 0.02,  0.04,  '9/1 12:00am'],
-        ['E.I. du Pont de Nemours and Company', 40.48, 0.51,  1.28,  '9/1 12:00am'],
-        ['Exxon Mobil Corp',                    68.1,  -0.43, -0.64, '9/1 12:00am'],
-        ['General Electric Company',            34.14, -0.08, -0.23, '9/1 12:00am'],
-        ['General Motors Corporation',          30.27, 1.09,  3.74,  '9/1 12:00am'],
-        ['Hewlett-Packard Co.',                 36.53, -0.03, -0.08, '9/1 12:00am'],
-        ['Honeywell Intl Inc',                  38.77, 0.05,  0.13,  '9/1 12:00am'],
-        ['Intel Corporation',                   19.88, 0.31,  1.58,  '9/1 12:00am'],
-        ['International Business Machines',     81.41, 0.44,  0.54,  '9/1 12:00am'],
-        ['Johnson & Johnson',                   64.72, 0.06,  0.09,  '9/1 12:00am'],
-        ['JP Morgan & Chase & Co',              45.73, 0.07,  0.15,  '9/1 12:00am'],
-        ['McDonald\'s Corporation',             36.76, 0.86,  2.40,  '9/1 12:00am'],
-        ['Merck & Co., Inc.',                   40.96, 0.41,  1.01,  '9/1 12:00am'],
-        ['Microsoft Corporation',               25.84, 0.14,  0.54,  '9/1 12:00am'],
-        ['Pfizer Inc',                          27.96, 0.4,   1.45,  '9/1 12:00am'],
-        ['The Coca-Cola Company',               45.07, 0.26,  0.58,  '9/1 12:00am'],
-        ['The Home Depot, Inc.',                34.64, 0.35,  1.02,  '9/1 12:00am'],
-        ['The Procter & Gamble Company',        61.91, 0.01,  0.02,  '9/1 12:00am'],
-        ['United Technologies Corporation',     63.26, 0.55,  0.88,  '9/1 12:00am'],
-        ['Verizon Communications',              35.57, 0.39,  1.11,  '9/1 12:00am'],
-        ['Wal-Mart Stores, Inc.',               45.45, 0.73,  1.63,  '9/1 12:00am']
-    ];
-    var store = Ext.create('Ext.data.ArrayStore', {
-        fields: [
-           {name: 'company'},
-           {name: 'price',      type: 'float'},
-           {name: 'change',     type: 'float'},
-           {name: 'pctChange',  type: 'float'},
-           {name: 'lastChange', type: 'date', dateFormat: 'n/j h:ia'}
-        ],
-        data: myData
+     Ext.define('Restaurant', {
+        extend: 'Ext.data.Model',
+        fields: ['name', 'cuisine']
     });
-    var  columns =  [
-            {
-                text     : 'Company',
-                flex     : 1,
-                sortable : false, 
-                dataIndex: 'company',
-                editor: {
-                  // defaults to textfield if no xtype is supplied
-                  allowBlank: false
-               }
-            },
-            {
-                text     : 'Price', 
-                width    : 75, 
-                sortable : true, 
-                renderer : 'usMoney', 
-                dataIndex: 'price'
-            },
-            {
-                text     : 'Change', 
-                width    : 75, 
-                sortable : true, 
-                dataIndex: 'change',
-                renderer: change
-            },
-            {
-                text     : '% Change', 
-                width    : 75, 
-                sortable : true, 
-                dataIndex: 'pctChange',
-                renderer: pctChange
-            },
-            {
-                text     : 'Last Updated', 
-                width    : 85, 
-                sortable : true, 
-                dataIndex: 'lastChange'
-            }
+
+    var Restaurants = Ext.create('Ext.data.Store', {
+        storeId: 'restaraunts',
+        model: 'Restaurant',
+        sorters: ['cuisine','name'],
+        groupField: 'cuisine',
+        data: [{
+            name: 'Cheesecake Factory',
+            cuisine: 'American'
+        },{
+            name: 'University Cafe',
+            cuisine: 'American'
+        },{
+            name: 'Slider Bar',
+            cuisine: 'American'
+        },{
+            name: 'Shokolaat',
+            cuisine: 'American'
+        },{
+            name: 'Gordon Biersch',
+            cuisine: 'American'
+        },{
+            name: 'Crepevine',
+            cuisine: 'American'
+        },{
+            name: 'Creamery',
+            cuisine: 'American'
+        },{
+            name: 'Old Pro',
+            cuisine: 'American'
+        },{
+            name: 'Nola\'s',
+            cuisine: 'Cajun'
+        },{
+            name: 'House of Bagels',
+            cuisine: 'Bagels'
+        },{
+            name: 'The Prolific Oven',
+            cuisine: 'Sandwiches'
+        },{
+            name: 'La Strada',
+            cuisine: 'Italian'
+        },{
+            name: 'Buca di Beppo',
+            cuisine: 'Italian'
+        },{
+            name: 'Pasta?',
+            cuisine: 'Italian'
+        },{
+            name: 'Madame Tam',
+            cuisine: 'Asian'
+        },{
+            name: 'Sprout Cafe',
+            cuisine: 'Salad'
+        },{
+            name: 'Pluto\'s',
+            cuisine: 'Salad'
+        },{
+            name: 'Junoon',
+            cuisine: 'Indian'
+        },{
+            name: 'Bistro Maxine',
+            cuisine: 'French'
+        },{
+            name: 'Three Seasons',
+            cuisine: 'Vietnamese'
+        },{
+            name: 'Sancho\'s Taquira',
+            cuisine: 'Mexican'
+        },{
+            name: 'Reposado',
+            cuisine: 'Mexican'
+        },{
+            name: 'Siam Royal',
+            cuisine: 'Thai'
+        },{
+            name: 'Krung Siam',
+            cuisine: 'Thai'
+        },{
+            name: 'Thaiphoon',
+            cuisine: 'Thai'
+        },{
+            name: 'Tamarine',
+            cuisine: 'Vietnamese'
+        },{
+            name: 'Joya',
+            cuisine: 'Tapas'
+        },{
+            name: 'Jing Jing',
+            cuisine: 'Chinese'
+        },{
+            name: 'Patxi\'s Pizza',
+            cuisine: 'Pizza'
+        },{
+            name: 'Evvia Estiatorio',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'Cafe 220',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'Cafe Renaissance',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'Kan Zeman',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'Gyros-Gyros',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'Mango Caribbean Cafe',
+            cuisine: 'Caribbean'
+        },{
+            name: 'Coconuts Caribbean Restaurant &amp; Bar',
+            cuisine: 'Caribbean'
+        },{
+            name: 'Rose &amp; Crown',
+            cuisine: 'English'
+        },{
+            name: 'Baklava',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'Mandarin Gourmet',
+            cuisine: 'Chinese'
+        },{
+            name: 'Bangkok Cuisine',
+            cuisine: 'Thai'
+        },{
+            name: 'Darbar Indian Cuisine',
+            cuisine: 'Indian'
+        },{
+            name: 'Mantra',
+            cuisine: 'Indian'
+        },{
+            name: 'Janta',
+            cuisine: 'Indian'
+        },{
+            name: 'Hyderabad House',
+            cuisine: 'Indian'
+        },{
+            name: 'Starbucks',
+            cuisine: 'Coffee'
+        },{
+            name: 'Peet\'s Coffee',
+            cuisine: 'Coffee'
+        },{
+            name: 'Coupa Cafe',
+            cuisine: 'Coffee'
+        },{
+            name: 'Lytton Coffee Company',
+            cuisine: 'Coffee'
+        },{
+            name: 'Il Fornaio',
+            cuisine: 'Italian'
+        },{
+            name: 'Lavanda',
+            cuisine: 'Mediterranean'
+        },{
+            name: 'MacArthur Park',
+            cuisine: 'American'
+        },{
+            name: 'St Michael\'s Alley',
+            cuisine: 'Californian'
+        },{
+            name: 'Cafe Renzo',
+            cuisine: 'Italian'
+        },{
+            name: 'Osteria',
+            cuisine: 'Italian'
+        },{
+            name: 'Vero',
+            cuisine: 'Italian'
+        },{
+            name: 'Cafe Renzo',
+            cuisine: 'Italian'
+        },{
+            name: 'Miyake',
+            cuisine: 'Sushi'
+        },{
+            name: 'Sushi Tomo',
+            cuisine: 'Sushi'
+        },{
+            name: 'Kanpai',
+            cuisine: 'Sushi'
+        },{
+            name: 'Pizza My Heart',
+            cuisine: 'Pizza'
+        },{
+            name: 'New York Pizza',
+            cuisine: 'Pizza'
+        },{
+            name: 'California Pizza Kitchen',
+            cuisine: 'Pizza'
+        },{
+            name: 'Round Table',
+            cuisine: 'Pizza'
+        },{
+            name: 'Loving Hut',
+            cuisine: 'Vegan'
+        },{
+            name: 'Garden Fresh',
+            cuisine: 'Vegan'
+        },{
+            name: 'Cafe Epi',
+            cuisine: 'French'
+        },{
+            name: 'Tai Pan',
+            cuisine: 'Chinese'
+        }]
+    });
+     var columns=  [{
+            text: 'Name',
+            flex: 1,
+            dataIndex: 'name'
+        },{
+            text: 'Cuisine',
+            flex: 1,
+            dataIndex: 'cuisine'
+        },
+        {
+        	xtype: 'rowactions',
+         flex: 0.3,
+         text: 'Действие',
+    		actions: [{ 
+    			iconCls: 'icon-clear-group', 
+    			qtip: 'Action on Row', 
+    			callback: function(grid, record, action, idx, col, e, target) { 
+    				Ext.Msg.alert('Row Action', record.get('name')); 
+    			} 
+    		}],
+    		keepSelection: true,
+    	    groupActions: [{ 
+    	    	iconCls: 'icon-grid', 
+    	    	qtip: 'Action on Group', 
+    	    	align: 'left', 
+    	    	callback: function(grid, records, action, groupValue) { 
+    	    		Ext.Msg.alert('Group Action', groupValue); 
+    	    	} 
+    	    }]
+        }
         ];
-     
      var gird =  Ext.create('Ext.ux.gridGroupEditAdm',{
          title: 'Grid Group Panel',
-         store: store,
+         store: Restaurants,
          columns:  columns,
       });
       Ext.create('Ext.panel.Panel', {            

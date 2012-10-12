@@ -15,7 +15,17 @@
    <script type="text/javascript" src="extjs/extentions/Ext.ux.gridEditAdm.js"></script>
    <script type="text/javascript" src="extjs/extentions/Ext.ux.gridGroupEditAdm.js"></script>
 
-   
+   <script type="text/javascript" src="extjs/extentions/RowActions.js"></script>
+    <link rel="stylesheet" type="text/css" href="extjs/extentions/RowActions.css" />
+    <style type="text/css">
+
+.icon-grid {
+    background-image:url(extjs/lib/img/silk-icons/folder_bell.png) !important;
+}
+.icon-clear-group {
+    background-image:url(extjs/lib/img/silk-icons/cog_go.png) !important;
+}
+</style>
     <script type="text/javascript">
        //var lk=new Ext.example();
          Ext.hoai = function(){
