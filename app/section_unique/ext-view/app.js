@@ -138,6 +138,7 @@ Ext.application({
         
         group: true,
         searchValue: null,
+        searchField: null,
         /**
         * @private
         * Case sensitive mode.
@@ -225,7 +226,7 @@ Ext.application({
             rowEditing.cancelEdit();
             
             var store = me.getStore();              
-              console.log(store);  
+              //console.log(store);  
             var model = store.model;
            
             var record = Ext.create(model);
@@ -243,11 +244,19 @@ Ext.application({
                me.searchValue  = me.down('textfield[name=searchField]').getValue();
                
                var store = me.getStore();
+               
+               //console.log(me); 
                if (me.searchValue.length > 0 ) {
                  // me.searchRegExp = new RegExp(me.searchValue, 'g' + (me.caseSensitive ? '' : 'i'));
                   
+                  /*Если searchField null то выбираем первый столбец                  * 
+                   * */
+                    //  
+                  if(me.searchField == null){                     
+                     me.searchField  = me.columns[1].dataIndex;                     
+                  }
                   store.filter([
-                      {filterFn: function(item) { return item.get("company").indexOf(me.searchValue) > -1; }}
+                      {filterFn: function(item) { return item.get(me.searchField).indexOf(me.searchValue) > -1; }}
                   ]);
                }else{
                   store.clearFilter(false);
