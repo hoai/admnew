@@ -12,8 +12,9 @@
     <script type="text/javascript" src="extjs/js/notice.js"></script>
     <script src="extjs/js/languages.js"></script>
    <script type="text/javascript" src="extjs/lib/extjs/extjs-4.1.1/locale/ext-lang-ru.js"></script>
+   <script type="text/javascript" src="extjs/extentions/Ext.ux.gridEditAdm.js"></script>
+   <script type="text/javascript" src="extjs/extentions/Ext.ux.gridGroupEditAdm.js"></script>
 
- 
    
     <script type="text/javascript">
        //var lk=new Ext.example();
