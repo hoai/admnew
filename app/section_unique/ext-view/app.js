@@ -237,19 +237,20 @@ Ext.application({
         {
         	xtype: 'rowactions',
          flex: 0.3,
-         text: 'Действие',
+         header: 'Действие',
+         //actionEvent: 'mouseover',
     		actions: [{ 
-    			iconCls: 'icon-clear-group', 
+    			iconCls: 'icon-add', 
     			qtip: 'Action on Row', 
     			callback: function(grid, record, action, idx, col, e, target) { 
     				Ext.Msg.alert('Row Action', record.get('name')); 
     			} 
     		}],
     		keepSelection: true,
-    	    groupActions: [{ 
+         groupActions: [{ 
     	    	iconCls: 'icon-grid', 
     	    	qtip: 'Action on Group', 
-    	    	align: 'left', 
+    	    	align: 'right', 
     	    	callback: function(grid, records, action, groupValue) { 
     	    		Ext.Msg.alert('Group Action', groupValue); 
     	    	} 

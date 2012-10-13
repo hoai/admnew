@@ -291,10 +291,9 @@ Ext.define('Ext.ux.grid.RowActions',{
 	 */
 	,initRenderData:function() {
 		
-		var me = this;
-
-		me.grid = me.up('gridpanel');
-		me.tpl = me.tpl || me.processActions(me.actions);
+		var me   = this;
+		me.grid  = me.up('gridpanel');
+		me.tpl   = me.tpl || me.processActions(me.actions);
 		var groupFeature = me.getGroupingFeature(me.grid);
 
 		me.grid.on('destroy', me.purgeListeners, me);
