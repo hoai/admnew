@@ -3,6 +3,9 @@ Ext.define('Ext.ux.treeAdm' ,{
     alias : 'widget.treeAdm',
     title : 'Каталог',
     rootVisible: false,
+    /** @classApi name of class router 
+     * */
+    classApi: '',
     viewConfig: {
             plugins: {
                 ptype: 'treeviewdragdrop'
@@ -285,7 +288,7 @@ Ext.define('Ext.ux.treeAdm' ,{
 
       }],
     initComponent: function() {
-         /*var store = Ext.create('Ext.data.TreeStore', {
+         /** var store = Ext.create('Ext.data.TreeStore', {
              root: {
                  expanded: true,
                  children: [
@@ -298,17 +301,20 @@ Ext.define('Ext.ux.treeAdm' ,{
                  ]
              }
          });*/
+        var classApi = this.classApi;
         var store =  Ext.create('Ext.data.TreeStore', {
                           proxy: {
                               type: 'direct',
-                              //directFn: dmList.getTree,
+                              
+                              //directFn: classApi.getTree,
+                              
                               api: {
-                                 read:    dmList.getTree,
-                                 add:     dmList.addNode,
-                                 update:  dmList.updateNode,
-                                 remove:  dmList.deleteNode,
-                                 search:  dmList.searchNode,
-                                 order:   dmList.nodeOrder,
+                                 read:    classApi.getTree,
+                                 add:     classApi.addNode,
+                                 update:  classApi.updateNode,
+                                 remove:  classApi.deleteNode,
+                                 search:  classApi.searchNode,
+                                 order:   classApi.nodeOrder,
                              },
                           },
                           root: {
@@ -330,7 +336,7 @@ Ext.define('Ext.ux.treeAdm' ,{
          'filter':   {
             scope:   this,
             fn:      function(param) {  
-               this.getStore().getProxy().api.read = dmList.searchNode;
+               this.getStore().getProxy().api.read = classApi.searchNode;
                this.getStore().load({
                   params: {
                      text: encodeURIComponent(param.text),
@@ -344,7 +350,7 @@ Ext.define('Ext.ux.treeAdm' ,{
          'reset':    {
             scope:   this,
             fn:      function() {
-               this.getStore().getProxy().api.read = dmList.getTree;
+               this.getStore().getProxy().api.read = classApi.getTree;
                this.getStore().getProxy().setExtraParam('grid_id',this.grid_id);
                this.getStore().load();
             }

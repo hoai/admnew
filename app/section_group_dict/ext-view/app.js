@@ -1,9 +1,3 @@
-
-Ext.require('Ext.direct.Manager',function(){
-	Ext.direct.Manager.addProvider(Ext.app.REMOTING_API)	
-});
-
-
 Ext.application({
    name: 'adm',
    appFolder: path_app,

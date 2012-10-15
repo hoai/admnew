@@ -12,8 +12,11 @@
     <script type="text/javascript" src="extjs/js/notice.js"></script>
     <script src="extjs/js/languages.js"></script>
    <script type="text/javascript" src="extjs/lib/extjs/extjs-4.1.1/locale/ext-lang-ru.js"></script>
+   <!-- add extentions -->
+   
    <script type="text/javascript" src="extjs/extentions/Ext.ux.gridEditAdm.js"></script>
    <script type="text/javascript" src="extjs/extentions/Ext.ux.gridGroupEditAdm.js"></script>
+   <script type="text/javascript" src="extjs/extentions/Ext.ux.treeAdm.js"></script>
 
 <!-- Load row actions resources -->    
    <script type="text/javascript" src="extjs/extentions/RowActions.js"></script>
@@ -100,6 +103,9 @@
    //var height = Math.max( body.scrollHeight, body.offsetHeight,html.clientHeight, html.scrollHeight, html.offsetHeight );
 
    //var width = Math.max( body.scrollWidth, body.offsetWidth, html.clientWidth, html.scrollWidth, html.offsetWidth )-180;
+    
+    
+
     </script>
     
 
@@ -137,6 +143,10 @@
   }
 echo "
 <script type='text/javascript'>
+   Ext.require('Ext.direct.Manager',function(){
+         Ext.direct.Manager.addProvider(Ext.app.REMOTING_API)	
+      });
+
    Ext.onReady(function(){
     var store = Ext.create('Ext.data.TreeStore', {
        root: {
