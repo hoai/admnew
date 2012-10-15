@@ -22,7 +22,7 @@ class dmList extends adm
       $owner_id   = $params->owner_id;
       $name       = $params->name;
 
-      $query = "INSERT INTO `catalog` VALUES (null,?,?)";
+      $query = "INSERT INTO `catalog` SET name=?,root=?";
       $this->db->query($query,$name,$owner_id);
       $params->id = 	$this->db->insert_id();
 
