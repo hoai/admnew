@@ -132,7 +132,7 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
             var sm   = me.getSelectionModel();
             
             Ext.Msg.show({
-              title:'Удалить',
+              title:'Удалить строки',
               msg: 'Вы хотите удалить?',
               buttons: Ext.Msg.YESNO,
               icon: Ext.Msg.QUESTION,
