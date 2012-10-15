@@ -35,6 +35,37 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
         */
         searchRegExp: null,
         plugins : [],        
+        /**
+         * add Row actions in group column
+         * {
+        	xtype: 'rowactions',
+         flex: 0.3,
+         header: 'Действие',
+         //actionEvent: 'mouseover',
+    		actions: [{ 
+    			iconCls: 'icon-add', 
+    			qtip: 'Action on Row', 
+            align: 'right', 
+    			callback: function(grid, record, action, idx, col, e, target) { 
+    				Ext.Msg.alert('Row Action', record.get('name')); 
+    			} 
+    		}],
+    		keepSelection: true,
+         groupActions: [{ 
+    	    	iconCls: 'icon-grid', 
+    	    	qtip: 'Action on Group', 
+    	    	align: 'right', 
+    	    	callback: function(grid, records, action, groupValue) { 
+    	    		Ext.Msg.alert('Group Action', groupValue); 
+    	    	} 
+    	    }]
+        }
+         * 
+         * 
+         * 
+         * 
+         * 
+         * */
         initComponent: function() {
         // constructor: function(config) {
             //console.log(config);
@@ -101,7 +132,7 @@ Ext.define('Ext.ux.gridGroupEditAdm', {
                pluginId: 'rowEditing'
             });
             
-            me.plugins     = [rowEditing];         
+            //me.plugins     = [rowEditing];         
             
             
             var groupingFeature = Ext.create('Ext.grid.feature.Grouping',{

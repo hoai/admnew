@@ -15,6 +15,7 @@
    <script type="text/javascript" src="extjs/extentions/Ext.ux.gridEditAdm.js"></script>
    <script type="text/javascript" src="extjs/extentions/Ext.ux.gridGroupEditAdm.js"></script>
 
+<!-- Load row actions resources -->    
    <script type="text/javascript" src="extjs/extentions/RowActions.js"></script>
     <link rel="stylesheet" type="text/css" href="extjs/extentions/RowActions.css" />
     <style type="text/css">
@@ -23,7 +24,7 @@
     background-image:url(extjs/lib/img/silk-icons/folder_bell.png) !important;
 }
 .icon-clear-group {
-    background-image:url(extjs/lib/img/silk-icons/cog_go.png) !important;
+    background-image:url(extjs/lib/img/silk-icons/folder_bell.png) !important;
 }
 </style>
     <script type="text/javascript">

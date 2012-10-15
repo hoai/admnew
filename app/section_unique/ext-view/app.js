@@ -242,6 +242,7 @@ Ext.application({
     		actions: [{ 
     			iconCls: 'icon-add', 
     			qtip: 'Action on Row', 
+            align: 'right', 
     			callback: function(grid, record, action, idx, col, e, target) { 
     				Ext.Msg.alert('Row Action', record.get('name')); 
     			} 
@@ -262,6 +263,7 @@ Ext.application({
          store: Restaurants,
          columns:  columns,
       });
+   
       Ext.create('Ext.panel.Panel', {            
          layout: 'fit',
          renderTo: 'app',
