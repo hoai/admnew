@@ -353,6 +353,46 @@ CREATE TABLE IF NOT EXISTS `master`. `markup_new` (
   KEY `supplier_id` (`supplier_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+/* Table structure for table `master`.`p_perm_grp` */
+CREATE TABLE IF NOT EXISTS `master`. `p_perm_grp` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(80) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/* Table structure for table `master`.`p_perms` */
+CREATE TABLE IF NOT EXISTS `master`. `p_perms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(108) NOT NULL,
+  `grp` int(11) NOT NULL,
+  `descr` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/* Table structure for table `master`.`p_role2perm` */
+CREATE TABLE IF NOT EXISTS `master`. `p_role2perm` (
+  `role_id` int(11) NOT NULL,
+  `perm_id` int(11) NOT NULL,
+  UNIQUE KEY `rid` (`role_id`,`perm_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/* Table structure for table `master`.`p_roles` */
+CREATE TABLE IF NOT EXISTS `master`. `p_roles` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(108) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `name` (`name`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+/* Table structure for table `master`.`p_user2role` */
+CREATE TABLE IF NOT EXISTS `master`. `p_user2role` (
+  `user_id` int(11) NOT NULL,
+  `role_id` int(11) NOT NULL,
+  UNIQUE KEY `uid` (`user_id`,`role_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
 /* Table structure for table `master`.`regions` */
 CREATE TABLE IF NOT EXISTS `master`. `regions` (
   `id` int(4) NOT NULL AUTO_INCREMENT,
@@ -545,6 +585,20 @@ CREATE TABLE IF NOT EXISTS `master`. `supplier_weight` (
   `nameField` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
+
+/* Table structure for table `master`.`u_user` */
+CREATE TABLE IF NOT EXISTS `master`. `u_user` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `username` varchar(255) NOT NULL DEFAULT 'anyous',
+  `password` varchar(255) DEFAULT NULL,
+  `database` varchar(255) NOT NULL DEFAULT 'user',
+  `name` varchar(255) DEFAULT NULL,
+  `company` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `phone` varchar(255) DEFAULT NULL,
+  `last_change` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 /* Table structure for table `master`.`unique_coincidence` */
 CREATE TABLE IF NOT EXISTS `master`. `unique_coincidence` (
