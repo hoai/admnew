@@ -1,0 +1,3 @@
+scp -r git@dev:/home/www/adm.13/backup/ .
+mv backup/* .
+rm -rf backup/

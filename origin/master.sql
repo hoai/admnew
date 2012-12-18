@@ -457,6 +457,7 @@ CREATE TABLE IF NOT EXISTS `master`. `supplier_cat_virt` (
   `root_name` varchar(32) NOT NULL,
   `ord` smallint(5) unsigned NOT NULL DEFAULT '0',
   `last_change` datetime NOT NULL,
+  `type` enum('c','o') DEFAULT 'c',
   PRIMARY KEY (`id`),
   KEY `supplier_id` (`supplier_id`),
   KEY `root_id` (`root_id`)

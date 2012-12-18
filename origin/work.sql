@@ -138,6 +138,7 @@ CREATE TABLE IF NOT EXISTS `work`. `sheet` (
   `pattern_id` int(11) DEFAULT NULL,
   `pattern` varchar(255) NOT NULL,
   `true_val` varchar(128) DEFAULT NULL,
+  `no_product_val` varchar(128) DEFAULT NULL,
   `add_name` enum('Y','N') NOT NULL DEFAULT 'N',
   `start_row` tinyint(2) NOT NULL DEFAULT '0',
   `cur` enum('u','r','e') NOT NULL DEFAULT 'u',
