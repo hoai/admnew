@@ -586,6 +586,15 @@ CREATE TABLE IF NOT EXISTS `master`. `supplier_weight` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 ;
 
+/* Table structure for table `master`.`u_plans` */
+CREATE TABLE IF NOT EXISTS `master`. `u_plans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) DEFAULT NULL,
+  `price` int(11) DEFAULT NULL,
+  `modules` int(3) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
 /* Table structure for table `master`.`u_user` */
 CREATE TABLE IF NOT EXISTS `master`. `u_user` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
@@ -597,8 +606,10 @@ CREATE TABLE IF NOT EXISTS `master`. `u_user` (
   `email` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
   `last_change` datetime NOT NULL,
+  `plan_id` int(3) DEFAULT '1',
   PRIMARY KEY (`id`),
-  UNIQUE KEY `username` (`username`)
+  UNIQUE KEY `username` (`username`),
+  UNIQUE KEY `database` (`database`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 /* Table structure for table `master`.`unique_coincidence` */
