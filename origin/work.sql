@@ -177,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `work`. `sheet_type` (
 
 /* Table structure for table `work`.`wares` */
 CREATE TABLE IF NOT EXISTS `work`. `wares` (
-  `id` varchar(24) NOT NULL DEFAULT '',
+  `id` varchar(33) NOT NULL DEFAULT '',
   `p_id` int(11) NOT NULL DEFAULT '0',
   `f_id` int(11) DEFAULT NULL,
   `our_id` int(10) unsigned DEFAULT '0',
@@ -194,6 +194,8 @@ CREATE TABLE IF NOT EXISTS `work`. `wares` (
   `warranty` varchar(255) DEFAULT NULL,
   `weight` varchar(255) DEFAULT NULL,
   `volume` varchar(255) DEFAULT NULL,
+  `added_at` datetime NOT NULL,
+  `last_change_at` datetime NOT NULL,
   PRIMARY KEY (`id`,`p_id`),
   UNIQUE KEY `primary_2` (`p_id`,`id`),
   KEY `vendor_code` (`vendor_code`),
